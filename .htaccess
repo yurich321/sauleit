@@ -1,8 +1,4 @@
 
-AuthType Basic
-AuthName "Protected area"
-AuthUserFile "/data01/virt126767/.htpasswrds/.htpasswrd"
-Require valid-user
 
 RewriteEngine On
 Options -Indexes
