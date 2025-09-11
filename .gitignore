@@ -10,3 +10,5 @@
 .env
 /config/app.php
 composer.phar
+/vendor/
+
