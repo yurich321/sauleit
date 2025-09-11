@@ -1,0 +1,25 @@
+{
+  "name": "test/sauleit",
+  "description": "Simple test project for SauleIt",
+  "type": "project",
+  "autoload": {
+    "files": [
+      "app/src/helpers.php"
+    ],
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sergei Jurjev",
+      "email": "work@jurjev.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "ext-curl": "*",
+    "ext-fileinfo": "*",
+    "ext-pdo": "*"
+  }
+}

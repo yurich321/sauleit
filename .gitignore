@@ -1,0 +1,12 @@
+# folders
+/vendor/
+/node_modules/
+/storage/logs/
+/.idea/
+
+# files
+*.log
+*.cache
+.env
+/config/app.php
+composer.phar

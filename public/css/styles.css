@@ -1,0 +1,316 @@
+:root {
+    --font: "Segoe UI", Roboto, sans-serif;
+    --panel: #151923;
+    --text: #5c5c5c
+}
+
+
+.header {
+    background-color: #363636;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+nav button {
+    color: #fff;
+    border: 1px solid #d6d6d6;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+nav button:hover {
+    background-color: #fff;
+    color: #19191c;
+    transition: 0.4s;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-container {
+    padding: 16px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+.auth-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-container label {
+    display: block;
+}
+
+.form input[type="text"],
+.form input[type="password"],
+.form button {
+    width: 350px;
+    box-sizing: border-box;
+    padding: 5px 14px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.form button {
+    background: #f73535;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.form button:hover {
+    background: #d92f2f;
+}
+/*-----------toast------------*/
+.toast-container {
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.toast {
+    min-width: 200px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    opacity: 0;
+    /*transform: translateX(100%);*/
+    transform: translateY(-30px);
+    transition: all 0.4s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast.success {
+    background: #22c55e;
+}
+
+.toast.error {
+    background: #ef4444;
+}
+
+.toast.info {
+    background: #3b82f6;
+}
+
+
+/*-----panel clients list table-----*/
+
+.wrap {
+    max-width: 1200px;
+    margin: 24px auto;
+    padding: 0 16px;
+    font: 14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color: var(--text);
+    font-weight: 600;
+}
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.head, .row {
+    display: grid;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    grid-template-columns: 80px 1.6fr 120px 140px 1fr 1fr 120px;
+}
+
+.head {
+    color: #1c1b1b;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing:.06em;
+    background-color: #eee;
+}
+.head div {
+    background-color: #eee;
+}
+
+.row.row-bets > * {
+    min-width: 0;
+}
+
+.row {
+    border-top: 1px solid #e5e5e5;;
+}
+
+.head.head-bets, .row.row-bets{
+    grid-template-columns: 80px 1fr 140px 1fr 50px 100px 120px;
+}
+
+.row.row-bets > div:last-child,
+.head.head-bets > div:last-child {
+    justify-self: end;
+}
+
+.settle-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+
+/*------client info--------*/
+
+.card + .card {
+    margin-top:12px;
+}
+
+.kv {
+    display:grid;
+    grid-template-columns: 180px 1fr;
+    gap:10px 16px;
+    padding:14px;
+    align-items:center;
+}
+.kv > div:nth-child(odd) {
+    color:#666;
+}
+.kv > div:nth-child(even) {
+    font-weight:600;
+    min-width:0;
+    overflow-wrap:anywhere;
+}
+
+.head-slim {
+    padding:10px 14px;
+    font-weight:600;
+    background:#f4f4f4;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.wallets-grid {
+    display:grid;
+    gap:10px;
+    padding:12px 14px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.wallet {
+    border:1px solid #eee;
+    border-radius:8px;
+    padding:10px 12px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+}
+.wallet .cur {
+    font-weight:700;
+}
+.wallet .amt {
+    font-variant-numeric: tabular-nums;
+}
+
+
+
+@media (max-width: 880px){
+
+    .head.head-bets {
+        display: none;
+    }
+    .row.row-bets{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+      "id     status"
+      "date   actions"
+      "stake  stake"
+      "out    out"
+      "odds   odds";
+        row-gap: 6px;
+        padding: 12px 14px;
+    }
+
+    .row.row-bets > div:nth-child(1){ grid-area: id; font-weight: 700; }
+    .row.row-bets > div:nth-child(2){ grid-area: date; color:#666; }
+    .row.row-bets > div:nth-child(3){ grid-area: stake; font-variant-numeric: tabular-nums; }
+    .row.row-bets > div:nth-child(4){ grid-area: out;}
+    .row.row-bets > div:nth-child(5){ grid-area: odds;}
+    .row.row-bets > div:nth-child(6){ grid-area: status; justify-self: end;}
+    .row.row-bets > div:nth-child(7){ grid-area: actions; justify-self: end; white-space: nowrap;}
+
+    .settle-form { gap: 8px; }
+    .settle-form label { white-space: nowrap; }
+    .settle-form button.js-settle { padding: 6px 10px; }
+}
+
+
+@media (max-width: 640px){
+    .kv {
+        grid-template-columns: 120px 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .form input[type="text"],
+    .form input[type="password"],
+    .form button {
+        width: 300px;
+    }
+}
+@media (max-width: 360px) {
+    .form input[type="text"],
+    .form input[type="password"],
+    .form button {
+        width: 100%;
+    }
+}

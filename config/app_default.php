@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'DB_DSN' => '',
+    'DB_USER' => '',
+    'DB_PASS' => '',
+];

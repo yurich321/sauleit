@@ -1,0 +1,16 @@
+
+AuthType Basic
+AuthName "Protected area"
+AuthUserFile "/data01/virt126767/.htpasswrds/.htpasswrd"
+Require valid-user
+
+RewriteEngine On
+Options -Indexes
+
+RewriteRule ^(app|config|storage)(/|$) - [F,L]
+
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+RewriteRule ^(.*)$ /public%{REQUEST_URI} [L]
+
+RewriteRule ^(.*)$ /public/index.php [QSA,L]
