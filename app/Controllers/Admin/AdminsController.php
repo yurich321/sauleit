@@ -21,9 +21,13 @@ class AdminsController
         }
 
         $clientId = (int)$id;
+        $client = repoAdmin()->findClientById($clientId);
+        if(!$client) {
+            $res->redirect('/panel/clients');
+        }
 
         view()::render('details', [
-            'client' => repoAdmin()->findClientById($clientId),
+            'client' => $client,
             'client_stakes' => repoAdmin()->getClientStakes($clientId),
         ]);
     }
