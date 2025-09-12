@@ -86,3 +86,7 @@ INSERT INTO wallets (client_id,currency,balance_minor) VALUES
 (1,'EUR',50000),(1,'USD',40000),(1,'RUB',1000000),
 (2,'EUR',30000),(2,'USD',80000),(2,'RUB',1050000);
 
+INSERT INTO client_contacts(client_id, TYPE, VALUE) VALUES
+                (1,'phone','+3721568754'),
+                (1,'phone','+376516568754');
+
