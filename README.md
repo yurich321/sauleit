@@ -27,6 +27,30 @@ A minimal PHP project with a tiny router, middlewares, client area, and an admin
 ## Tables (DDL)
 
 ```sql
+
+-- Roles
+CREATE TABLE `roles` (
+     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+     `name` varchar(50) NOT NULL,
+     `role` varchar(50) NOT NULL,
+     `home_path` varchar(255) NOT NULL DEFAULT '/',
+     PRIMARY KEY (`id`),
+     UNIQUE KEY `role` (`role`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+-- Users
+CREATE TABLE `users` (
+     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+     `email` varchar(255) NOT NULL,
+     `password_hash` varchar(255) NOT NULL,
+     `name` varchar(200) NOT NULL,
+     `role_id` int(11) unsigned NOT NULL,
+     `is_active` tinyint(1) NOT NULL DEFAULT 1,
+     `created_at` timestamp NULL DEFAULT current_timestamp(),
+     PRIMARY KEY (`id`),
+     UNIQUE KEY `email` (`email`),
+     KEY `users_roles` (`role_id`),
+     CONSTRAINT `users_roles` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 -- Clients
 CREATE TABLE `clients` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
