@@ -111,7 +111,7 @@ CREATE TABLE `wallet_tx` (
 app/                # Core, Controllers, Middleware, Repositories, Services
 public/             # Public web root (index.php, assets, js, css)
 views/              # View templates (client/login/panel)
-app/src/helpers.php # Helpers (csrf(), view(), repoAdmin(), wallet service, etc.)
+app/src/helpers.php # Helpers (csrf(), view(), repoAdmin(), wallet service)
 ```
 
 ## Routing (key endpoints)
@@ -122,7 +122,7 @@ app/src/helpers.php # Helpers (csrf(), view(), repoAdmin(), wallet service, etc.
     - `GET /panel/clients/{id}` — client details (contacts, wallets, bet history).
     - `POST /panel/bets/settle` — settle a bet. Params:
         - `stake_id` (int), `result` = `win` | `lose` (CSRF required).
-        - Response JSON includes `{ ok: true, result, wallet? }` with updated balance.
+        - Response JSON includes `{ ok: true, result, wallet}` with updated balance.
 
 ## Bet Settlement Logic
 - **lose** — marks stake as settled with `result=lose`; balance stays unchanged.
